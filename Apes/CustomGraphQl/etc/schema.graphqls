@@ -1,0 +1,9 @@
+type Query {
+    getCustomMessage: CustomMessageOutput! @resolver(class: "Apes\\CustomGraphQl\\Model\\Resolver\\CustomMessage") @doc(description: "Retrieves a custom message and server time.")
+}
+
+type CustomMessageOutput @doc(description: "The output type for the custom message query.") {
+    message: String! @doc(description: "The main custom message.")
+    timestamp: String! @doc(description: "The current server time.")
+    status: Int! @doc(description: "Current status")
+}
