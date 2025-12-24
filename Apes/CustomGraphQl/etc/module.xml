@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Module configuration file.
+ * We add a sequence dependency on Magento_GraphQl to ensure our module loads last,
+ * giving us access to GraphQL features.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Apes_CustomGraphQl" setup_version="1.0.0">
+        <sequence>
+            <!-- Ensure this module loads after the core GraphQL module -->
+            <module name="Magento_GraphQl"/>
+        </sequence>
+    </module>
+</config>
