@@ -1,0 +1,25 @@
+type Query {
+    blogDetails (
+        blog_id: Int @doc(description: "Search Docs List.")
+    ): BlogDetails @resolver(class: "Apes\\CustomGraphQlv2\\Model\\Resolver\\BlogDetails") @doc(description: "Return details about a Blog Details.")
+    blogList: BlogList @resolver(class: "Apes\\CustomGraphQlv2\\Model\\Resolver\\BlogList") @doc(description: "Return details about a Blog List.")
+}
+type BlogDetails {
+    post_id: Int @doc(description: "The ID of a Post page.")
+    name: String @doc(description: "The Post name.")
+    url_key: String @doc(description: "Url Key.")
+    post_content: String @doc(description: "Post Content")
+    status: Int @doc(description: "Blog Status")
+}
+
+type BlogList {
+    name: String @doc(description: "The Post name.")
+    url_key: String @doc(description: "Url Key.")
+    status: Int @doc(description: "Blog Status")
+    category: CategoryList
+}
+
+type CategoryList {
+    category_id: Int @doc(description: "The id of category")
+    category_name: String @doc(description: "The name of category")
+}
